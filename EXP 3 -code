@@ -1,0 +1,21 @@
+import re
+
+reg = input("Register No: ")
+email = input("Email: ")
+course = input("Course Code: ")
+sem = input("Semester: ")
+mobile = input("Mobile: ")
+print("Register:", "Valid" if re.fullmatch(r"\d{12}", reg) else "Invalid")
+print("Email:", "Valid" if re.fullmatch(r"\w+@\w+\.edu", email) else "Invalid")
+print("Course:", "Valid" if re.fullmatch(r"[A-Z]{3}\d{3}", course) else "Invalid")
+print("Semester:", "Valid" if re.fullmatch(r"[1-8]", sem) else "Invalid")
+print("Mobile:", "Valid" if re.fullmatch(r"[6-9]\d{9}", mobile) else "Invalid")
+
+if (re.fullmatch(r"\d{12}", reg) and
+    re.fullmatch(r"\w+@\w+\.edu", email) and
+    re.fullmatch(r"[A-Z]{3}\d{3}", course) and
+    re.fullmatch(r"[1-8]", sem) and
+    re.fullmatch(r"[6-9]\d{9}", mobile)):
+    print("Registration Successful")
+else:
+    print("Registration Failed")
