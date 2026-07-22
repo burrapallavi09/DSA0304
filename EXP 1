@@ -1,0 +1,17 @@
+import re
+
+text = input("Enter a sentence: ")
+
+match_result = re.match(r"Python", text)
+
+if match_result:
+    print("Match Found: Text starts with 'Python'")
+else:
+    print("No Match: Text does not start with 'Python'")
+
+search_result = re.search(r"programming", text)
+
+if search_result:
+    print("Search Found: 'programming' is present in the text.")
+else:
+    print("Search Not Found: 'programming' is not present.")
