@@ -1,0 +1,6 @@
+words = ["playing", "walked", "reading"] 
+for word in words: 
+           if word.endswith("ing"): 
+	print(word, "->", word[:-3]) 
+          elif word.endswith("ed"): 
+	print(word, "->", word[:-2])
