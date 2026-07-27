@@ -1,0 +1,17 @@
+import random
+
+text = input("Enter text: ")
+words = text.split()
+
+bigrams = {}
+for i in range(len(words)-1):
+    bigrams.setdefault(words[i], []).append(words[i+1])
+
+word = words[0]
+print("Generated Text:", end=" ")
+print(word, end=" ")
+
+for _ in range(5):
+    if word in bigrams:
+        word = random.choice(bigrams[word])
+        print(word, end=" ")

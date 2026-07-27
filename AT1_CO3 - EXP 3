@@ -1,0 +1,30 @@
+import re
+
+text = """Meeting on 12/09/2026
+Call 9876543210
+#NLP
+@OpenAI
+natural language processing"""
+
+print("1.Date\n2.Phone\n3.Hashtag\n4.Mention\n5.Prefix\n6.Suffix")
+ch = int(input("Enter choice: "))
+
+if ch == 1:
+    print(re.findall(r'\d{2}/\d{2}/\d{4}', text))
+
+elif ch == 2:
+    print(re.findall(r'[6-9]\d{9}', text))
+
+elif ch == 3:
+    print(re.findall(r'#\w+', text))
+
+elif ch == 4:
+    print(re.findall(r'@\w+', text))
+
+elif ch == 5:
+    p = input("Enter prefix: ")
+    print(re.findall(r'\b' + p + r'\w*', text))
+
+elif ch == 6:
+    s = input("Enter suffix: ")
+    print(re.findall(r'\b\w*' + s + r'\b', text))
