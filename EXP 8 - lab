@@ -1,0 +1,22 @@
+import nltk
+from nltk import pos_tag, word_tokenize
+
+# Download required resources (run once)
+nltk.download('punkt')
+nltk.download('punkt_tab')
+nltk.download('averaged_perceptron_tagger')
+nltk.download('averaged_perceptron_tagger_eng')
+
+# Input sentence
+text = input("Enter a sentence: ")
+
+# Tokenize the sentence
+words = word_tokenize(text)
+
+# Perform probabilistic POS tagging
+tags = pos_tag(words)
+
+# Display the tags
+print("\nStochastic POS Tags:")
+for word, tag in tags:
+    print(word, "->", tag)

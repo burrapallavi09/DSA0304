@@ -1,0 +1,20 @@
+import re
+
+text = input("Enter a sentence: ")
+words = text.split()
+
+print("\nRule-Based POS Tags:")
+
+for word in words:
+    if re.fullmatch(r'.*ing', word):
+        tag = "VBG"      # Verb (Present Participle)
+    elif re.fullmatch(r'.*ed', word):
+        tag = "VBD"      # Verb (Past Tense)
+    elif re.fullmatch(r'.*ly', word):
+        tag = "RB"       # Adverb
+    elif re.fullmatch(r'.*ous', word):
+        tag = "JJ"       # Adjective
+    else:
+        tag = "NN"       # Noun (Default)
+
+    print(word, "->", tag)

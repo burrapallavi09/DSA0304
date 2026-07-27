@@ -1,0 +1,19 @@
+text = input("Enter a sentence: ")
+words = text.split()
+
+print("\nTransformation-Based POS Tags:")
+
+for word in words:
+    tag = "NN"   # Default tag: Noun
+
+    # Transformation Rules
+    if word.endswith("ing"):
+        tag = "VBG"
+    elif word.endswith("ed"):
+        tag = "VBD"
+    elif word.endswith("ly"):
+        tag = "RB"
+    elif word[0].isupper():
+        tag = "NNP"
+
+    print(word, "->", tag)
