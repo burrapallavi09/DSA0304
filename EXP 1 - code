@@ -1,0 +1,21 @@
+import re
+
+name = input("Enter Name: ")
+email = input("Enter Email: ")
+mobile = input("Enter Mobile Number: ")
+skills = input("Enter Skills: ")
+exp = int(input("Enter Experience (years): "))
+
+found_skills = re.findall(r"Python|Java|SQL|Machine Learning|NLP", skills, re.I)
+
+print("\n--- Candidate Summary ---")
+print("Name:", name)
+print("Email:", email)
+print("Mobile:", mobile)
+print("Skills:", found_skills)
+print("Experience:", exp, "years")
+
+if exp >= 2 and any(skill.lower() == "python" for skill in found_skills):
+    print("Eligible")
+else:
+    print("Not Eligible")
