@@ -11,7 +11,6 @@ ch = int(input("Enter choice: "))
 
 if ch == 1:
     print(re.findall(r'\d{2}/\d{2}/\d{4}', text))
-
 elif ch == 2:
     print(re.findall(r'[6-9]\d{9}', text))
 
