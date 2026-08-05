@@ -1,0 +1,27 @@
+words = ["activate", "activation", "reactivation"]
+
+print("{:<15} {:<8} {:<10} {:<8} {:<15} {:<12}".format(
+    "Word", "Prefix", "Root", "Suffix", "Sequence", "Normalized"))
+
+for word in words:
+
+    if word == "activate":
+        prefix = "-"
+        root = "activate"
+        suffix = "-"
+        sequence = "Base"
+
+    elif word == "activation":
+        prefix = "-"
+        root = "activate"
+        suffix = "ion"
+        sequence = "Verb→Noun"
+
+    elif word == "reactivation":
+        prefix = "re"
+        root = "activate"
+        suffix = "ion"
+        sequence = "re + ion"
+
+    print("{:<15} {:<8} {:<10} {:<8} {:<15} {:<12}".format(
+        word, prefix, root, suffix, sequence, root))

@@ -1,0 +1,30 @@
+words = ["disagree", "agreement", "agreeable"]
+
+print("{:<12} {:<8} {:<8} {:<10} {:<15} {:<15}".format(
+    "Word", "Prefix", "Root", "Suffix", "Type", "Meaning"))
+
+for word in words:
+
+    if word == "disagree":
+        prefix = "dis"
+        root = "agree"
+        suffix = "-"
+        mtype = "Derivational"
+        meaning = "Opposite"
+
+    elif word == "agreement":
+        prefix = "-"
+        root = "agree"
+        suffix = "ment"
+        mtype = "Derivational"
+        meaning = "State"
+
+    elif word == "agreeable":
+        prefix = "-"
+        root = "agree"
+        suffix = "able"
+        mtype = "Derivational"
+        meaning = "Capable"
+
+    print("{:<12} {:<8} {:<8} {:<10} {:<15} {:<15}".format(
+        word, prefix, root, suffix, mtype, meaning))
